@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/simple.css">
+    <title></title>
+    <style>
+        .test {
+            display: block;
+            width: 100vw;
+            /* height: 50vh; */
+        }
+
+        #reference h3 {
+            color: #e67e22;
+            font-family: "Open Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 25px;
+            margin-bottom: 3px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="simple">
+        <header>
+            <h1></h1>
+        </header>
+        <div class="test">
+
+        </div>
+        <article>
+            <div id="reference">
+                <h1>digitalRead()</h1>
+                [Digital I/O]
+                <div id="overview" class="openblock">
+                    <div class="content">
+                        <h3 id="_description" class="float">Description</h3>
+                        <div class="paragraph">
+                            <p>Reads the value from a specified digital pin, either <code>HIGH</code> or
+                                <code>LOW</code>.</p>
+                        </div>
+                        <h3 id="_syntax" class="float">Syntax</h3>
+                        <div class="paragraph">
+                            <p><code>digitalRead(pin)</code></p>
+                        </div>
+                        <h3 id="_parameters" class="float">Parameters</h3>
+                        <div class="paragraph">
+                            <p><code>pin</code>: the Arduino pin number you want to read</p>
+                        </div>
+                        <h3 id="_returns" class="float">Returns</h3>
+                        <div class="paragraph">
+                            <p><code>HIGH</code> or <code>LOW</code></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="howtouse" class="openblock">
+                    <div class="content">
+                        <h3 id="_example_code" class="float">Example Code</h3>
+                        <div class="paragraph">
+                            <p>Sets pin 13 to the same value as pin 7, declared as an input.</p>
+                        </div>
+                        <div class="listingblock">
+                            <div class="content">
+                                <pre class="highlight"><code class="language-arduino" data-lang="arduino">
+    int ledPin = 13;  // LED connected to digital pin 13
+    int inPin = 7;    // pushbutton connected to digital pin 7
+    int val = 0;      // variable to store the read value
+    
+    void setup() {
+        pinMode(ledPin, OUTPUT);  // sets the digital pin 13 as output
+        pinMode(inPin, INPUT);    // sets the digital pin 7 as input
+    }
+    
+    void loop() {
+        val = digitalRead(inPin);   // read the input pin
+        digitalWrite(ledPin, val);  // sets the LED to the button's value
+                }</code></pre>
+                            </div>
+                        </div>
+                        <h3 id="_notes_and_warnings" class="float">Notes and Warnings</h3>
+                        <div class="paragraph">
+                            <p>If the pin isn’t connected to anything, <code>digitalRead()</code> can return either
+                                <code>HIGH</code> or <code>LOW</code> (and this can change randomly).</p>
+                        </div>
+                        <div class="paragraph">
+                            <p>The analog input pins can be used as digital pins, referred to as A0, A1, etc. The
+                                exception is the Arduino Nano, Pro Mini, and Mini’s A6 and A7 pins, which can only be
+                                used as analog inputs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="see_also" class="openblock">
+                    <div class="content">
+                        <h3 id="_see_also" class="float">See also</h3>
+                        <div class="ulist example">
+                            <ul>
+                                <li>
+                                    <p><mark>EXAMPLE</mark> <a href="http://arduino.cc/en/Tutorial/DigitalPins"
+                                            target="_blank" rel="noopener">Description of the digital pins</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ulist language">
+                        <ul></ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </article>
+    </main>
+    <script>
+        function $(ele) {
+            return document.querySelector(ele);
+        }
+
+        let app = $('#app');
+    </script>
+</body>
+
+</html>
